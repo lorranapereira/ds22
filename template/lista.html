@@ -1,0 +1,17 @@
+{% extends './template.html' %}
+{% block content %}
+    <td><a href="/form">Inserir</a></td>        
+    <table>
+        <tr>                    
+            <th>Código</th><th>Nome</th><th>Nome do Departamento</th>            
+        </tr> 
+        {% for linha in func %}        
+            <tr>
+                <td>{{linha.id}}</td><td>{{linha.nome}}</td><td>{{linha.Depto.nome}}</td>
+                <td><a type="buttom" href="/deletar?id={{linha.id}}">Deletar</a></td>
+                <td><a type="buttom" href="/form?id={{linha.id}}">Alterar</a></td>
+            </tr>           
+        {%endfor%}
+    </table>
+{% endblock %}
+    

@@ -1,0 +1,19 @@
+{% extends './template.html' %}
+{% block content %}
+    <td><a href="/formprojeto">Inserir</a></td>        
+    <table>
+        <tr>                    
+            <th>Código</th><th>Nome</th><th>Data Prevista</th>           
+        </tr> 
+        {% for linha in proj: %}        
+            <tr>
+                <td>{{linha.id}}</td><td>{{linha.nome}}</td><td>{{linha.dataPrevista.strftime('%d-%m-%Y')}}</td>
+                <td><a type="buttom" href="/deletarProjeto?id={{linha.id}}">Deletar</a></td>
+                <td><a type="buttom" href="/alterarProjeto?id={{linha.id}}">Alterar</a></td>
+                <td><a type="buttom" href="#">Detalhes</a></td>                
+            </tr>           
+        {%endfor%}
+    </table>
+         
+{% endblock %}
+    

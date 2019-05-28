@@ -1,0 +1,19 @@
+{% extends './template.html' %}
+{% block content %}
+    <td><a href="/formdepto">Inserir</a></td>        
+    <table>
+        <tr>                    
+            <th>Código</th><th>Nome do Departamento</th>            
+        </tr> 
+        {% for linha in depto %}        
+            <tr>
+                <td>{{linha.id}}</td><td>{{linha.nome}}</td>
+                <td><a type="buttom" href="/deletardepto?id={{linha.id}}">Deletar</a></td>
+                <td><a type="buttom" href="/formdepto?id={{linha.id}}">Alterar</a></td>
+                <td><a type="buttom" href="/detalhedepto?id={{linha.id}}">Detalhes</a></td>                
+            </tr>           
+        {%endfor%}
+    </table>
+         
+{% endblock %}
+    

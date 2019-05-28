@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Document</title>
+</head>
+<body>
+    <div class="topnav">
+        <a class="active" href="#home">Home</a>
+        <div class="dropdown">
+            <button class="dropbtn">Departamento 
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="/deptoform">Cadastrar<ra>
+                <a href="/listardepto">Listar</a>
+            </div>
+        </div> 
+        <div class="dropdown">
+            <button class="dropbtn">Funcionário 
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="/form">Cadastrar</a>
+                <a href="/listar">Listar</a>
+            </div>
+        </div> 
+        <div class="dropdown">
+            <button class="dropbtn">Projeto 
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="/formprojeto">Cadastrar</a>
+                <a href="/listarprojeto">Listar</a>
+            </div>
+        </div> 
+    </div>
+    <div class="container">                
+        {% block content %}{% endblock %}
+    </div>
+    
+        
+</body>
+</html>

@@ -1,0 +1,25 @@
+{% extends './template.html' %}
+{% block content %}
+<form action="/envio" method="post">
+    <div class="pagina"><h1>{{nome}}</h1></div>
+    <div class="grupo1">
+        <label for="user">Nome</label>
+        <input type="text" value="{{func.nome}}" name="nome">
+    </div>
+    <br/>    
+    <div class="grupo2">    
+        <label for="user">Departamento</label>
+        <select  name="idDepto" id="">
+            {%   for linha in dep:   %}
+                <option  name="idDepto" value="{{linha.id}}">{{linha.nome}}</option>
+            {% endfor %}            
+        </select>
+        {% if id!='': %}
+            <input type="hidden" value="{{func.id}}" name="id">
+        {% endif %}
+        <button class="buttonform" type="submit">enviar</button>                        
+    </div>
+    <br/>      
+</form>
+{% endblock %}
+    

@@ -1,0 +1,25 @@
+{% extends './template.html' %}
+{% block content %}
+<form action="/inserirproj" method="post">
+    <div class="pagina"><h1>Projeto</h1></div>
+    <div class="grupo1">
+        <label for="user">Nome</label>
+        <input type="text" value="" name="nome">
+    </div>
+    <br/>    
+    <div class="grupo1">    
+        <label for="user">Data prevista da entrega</label>
+            <input type="date" value="" name="data_prevista">
+        <button class="buttonform" type="submit">enviar</button>                        
+    </div>
+    <div class="grupo2">            
+        <select  name="func" id="">
+            {% for linha in func:   %}
+                <option  name="func" value="{{linha.id}}">{{linha.nome}}</option>
+            {% endfor %}            
+        </select>
+    </div>
+    <br/>      
+</form>
+{% endblock %}
+    
